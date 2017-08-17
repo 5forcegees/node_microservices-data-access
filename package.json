@@ -4,7 +4,8 @@
   "description": "Data access layer library used to call data services such as SOAP, LDAP, database, etc. The DAL will be called from the Service Layer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reinstall": "for i in $(echo application-configuration cache data-access logging security services); do rm -rf node_modules/$i ; done && npm install"
   },
   "repository": {
     "type": "git",

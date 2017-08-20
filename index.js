@@ -1,5 +1,6 @@
 var esb = {},
-    ldap = {};
+    ldap = {},
+    http = {},
     libRoot = __dirname;
 
 module.exports = function(config) {
@@ -26,12 +27,14 @@ module.exports = function(config) {
 
     appConfig = require('application-configuration')(config);
 
-    esb = require('./lib/esb.js')(appConfig);
-    ldap = require('./lib/ldap.js')(appConfig);
+    esb = require('./lib/esb')(appConfig);
+    ldap = require('./lib/ldap')(appConfig);
+    http = require('./lib/http')(appConfig);
 
     return {
         esb: esb,
         ldap: ldap,
-        libRoot: __dirname
+        libRoot: __dirname,
+        http: http
     }
 }
